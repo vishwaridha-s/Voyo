@@ -3,6 +3,6 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 FROM openjdk:17.0.1-jdk-slim
-COPY --from=build /target/*.jar life.jar
+COPY --from=build /target/*.jar travellapp.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "life.jar"]
+ENTRYPOINT ["java", "-jar", "travellapp.jar"]
